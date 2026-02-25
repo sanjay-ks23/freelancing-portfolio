@@ -19,7 +19,7 @@ const projects = [
         image: etlImg
     },
     {
-        title: "Real-Time Moving Object Detection",
+        title: "Dynamic Motion Isolation by Background Subtraction",
         desc: "Designed an efficient background subtraction algorithm optimized to run in real-time on small, resource-constrained devices. Proposed a complete optimization approach covering background modeling and autonomous updating.",
         link: "https://github.com/sanjay-ks23/Background-Subtraction-for-Moving-Object-detection",
         image: bgSubImg
