@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-primary: #f7f7f7;
-  --bg-secondary: #e5e7eb;
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
   --accent-color: #66b2a2;
 }
 

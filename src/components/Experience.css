@@ -81,11 +81,10 @@
     height: 70px;
     max-width: 250px;
     object-fit: contain;
-    /* Use multiply to make white backgrounds transparent and logos dark grey */
-    filter: grayscale(100%);
-    mix-blend-mode: multiply;
-    opacity: 0.85;
-    /* Increased opacity to make them bolder and more visible */
+    /* Invert for dark theme, then use screen to make black transparent */
+    filter: invert(1) grayscale(100%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
     transition: all 0.3s ease;
 }
 
@@ -188,6 +187,11 @@
     width: 24px;
     height: 24px;
     object-fit: contain;
+}
+
+.tech-icon[src*="amazonwebservices"],
+.tech-icon[src*="github"] {
+    filter: invert(1);
 }
 
 
