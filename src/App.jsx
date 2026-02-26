@@ -3,12 +3,20 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
+import Services from './components/Services';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import './App.css';
 
 function App() {
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="app-container">
       <Navbar />
@@ -26,8 +34,8 @@ function App() {
         <Experience />
       </section>
 
-      <section id="skills" className="snap-section bg-secondary">
-        <Skills />
+      <section id="services" className="snap-section bg-secondary">
+        <Services />
       </section>
 
       <section id="projects" className="snap-section">
@@ -38,7 +46,7 @@ function App() {
         <Contact />
       </section>
 
-      <a href="#hero" className="global-home-btn" aria-label="Go to home">
+      <a href="#hero" onClick={(e) => handleScroll(e, 'hero')} className="global-home-btn" aria-label="Go to home">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
       </a>
     </div>

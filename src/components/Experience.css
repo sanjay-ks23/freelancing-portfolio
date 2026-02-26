@@ -10,34 +10,133 @@
     overflow: hidden;
 }
 
+.experience-header-area {
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-header-area .section-title {
+    position: relative;
+    top: 0;
+    margin: 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.clients-subtitle {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.client-marquee-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client-marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    display: flex;
+    align-items: center;
+}
+
+.client-marquee {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-marquee 40s linear infinite;
+}
+
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 4));
+        /* Divided by 4 since we multiplied the array by 4 */
+    }
+}
+
+.client-logo-wrapper {
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-logo {
+    height: 70px;
+    max-width: 250px;
+    object-fit: contain;
+    /* Use multiply to make white backgrounds transparent and logos dark grey */
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+    opacity: 0.85;
+    /* Increased opacity to make them bolder and more visible */
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+    .client-logo {
+        /* Invert first so white bg becomes black, then use screen to make black transparent! */
+        filter: invert(1) grayscale(100%);
+        mix-blend-mode: screen;
+        opacity: 0.8;
+    }
+
+    .client-logo:hover {
+        opacity: 1;
+    }
+}
+
 .experience-cards-wrapper {
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 10rem;
     display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    overflow-x: auto;
     padding: 0 2rem 2rem;
-    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .experience-cards-wrapper::-webkit-scrollbar {
-    height: 8px;
+    height: 24px;
 }
 
 .experience-cards-wrapper::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: rgba(102, 178, 162, 0.1);
+    border: 9px solid transparent;
+    background-clip: padding-box;
+    border-radius: 12px;
+    margin: 0 4rem;
 }
 
 .experience-cards-wrapper::-webkit-scrollbar-thumb {
     background: var(--accent-color);
-    border-radius: 4px;
+    border: 9px solid transparent;
+    background-clip: padding-box;
+    border-radius: 12px;
 }
 
 .experience-cards-scroll {
     display: flex;
     gap: 3rem;
-    padding-left: calc(50vw - 325px);
-    padding-right: calc(50vw - 325px);
 }
 
 .experience-card {
@@ -197,7 +296,7 @@
     }
 
     .experience-cards-scroll {
-        padding-left: calc(50vw - 160px);
-        padding-right: calc(50vw - 160px);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

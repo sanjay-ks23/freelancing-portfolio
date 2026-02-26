@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Github } from 'lucide-react';
 import chatbotImg from '../assets/image.png';
 import etlImg from '../assets/etl_pipeline.png';
 import bgSubImg from '../assets/image_copy.png';
@@ -7,20 +8,20 @@ import './Projects.css';
 
 const projects = [
     {
-        title: "AI-Powered Therapy Chatbot",
-        desc: "Architected a hybrid AI engine using graph databases to boost reasoning accuracy by 40%. Engineered a real-time pipeline with caching and safety guardrails to ensure reliable, hallucination-free responses.",
+        title: "Agentic Conversational Support System",
+        desc: "Designed a GraphRAG architecture utilizing a hybrid retrieval mechanism to enhance reasoning capabilities and contextual understanding. Implemented real-time inference optimization and response validation guardrails to ensure reliability and safety.",
         link: "https://github.com/sanjay-ks23",
         image: chatbotImg
     },
     {
-        title: "Real-Time Social Media Data Pipeline",
-        desc: "Developed a high-speed data extraction pipeline achieving lightning-fast query times for real-time analytics. Automated large-scale data collection from complex websites using advanced browser orchestration.",
+        title: "Real Time Social Media Data Pipeline",
+        desc: "Engineered a scalable ETL system for real time analytics, optimizing distributed data extraction and orchestration workflows to achieve low latency query performance across large scale datasets.",
         link: "https://github.com/sanjay-ks23",
         image: etlImg
     },
     {
-        title: "Dynamic Motion Isolation by Background Subtraction",
-        desc: "Designed an efficient background subtraction algorithm optimized to run in real-time on small, resource-constrained devices. Proposed a complete optimization approach covering background modeling and autonomous updating.",
+        title: "Real Time Motion Segmentation System",
+        desc: "Implemented an optimized background modeling and motion isolation framework designed for low resource edge devices, enabling real time performance under constrained compute environments.",
         link: "https://github.com/sanjay-ks23/Background-Subtraction-for-Moving-Object-detection",
         image: bgSubImg
     }
@@ -35,14 +36,14 @@ const ProjectCard = ({ project, index }) => {
                 </div>
             )}
             <div className="project-content">
-                <h4 className="project-title">
-                    {project.title}
-                </h4>
+                <div className="project-header-row">
+                    <h4 className="project-title">{project.title}</h4>
+                    <a href={project.link} target="_blank" rel="noreferrer" className="project-github-link">
+                        <Github size={20} />
+                    </a>
+                </div>
                 <div className="project-divider"></div>
                 <p className="project-desc">{project.desc}</p>
-                <a href={project.link} target="_blank" rel="noreferrer" className="project-link">
-                    View Project On Github
-                </a>
             </div>
         </article>
     );
@@ -54,16 +55,9 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            onViewportEnter={() => {
-                const scrollContainer = document.querySelector('.projects-cards-wrapper');
-                if (scrollContainer) {
-                    // Center the scroll symmetrically
-                    scrollContainer.scrollLeft = (scrollContainer.scrollWidth - scrollContainer.clientWidth) / 2;
-                }
-            }}
             className="projects-container"
         >
-            <h3 className="section-title heading-spaced">Projects</h3>
+            <h3 className="section-title heading-spaced">Work Showcase</h3>
 
             <div className="projects-cards-wrapper">
                 <div className="projects-cards-scroll">

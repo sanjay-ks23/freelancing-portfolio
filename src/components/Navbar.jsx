@@ -4,6 +4,14 @@ import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="navbar-container">
@@ -26,7 +34,7 @@ const Navbar = () => {
                     transition={{ duration: 1.5 }}
                     className="get-in-touch"
                 >
-                    <a href="#contact" className="contact-link">
+                    <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="contact-link">
                         <Mail size={24} />
                         <span className="contact-text">GET IN TOUCH</span>
                     </a>

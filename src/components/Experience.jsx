@@ -1,9 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Zap, Shield, Wind } from 'lucide-react';
 import matsImg from '../assets/mats.jpeg';
 import boopathiImg from '../assets/boopathi.jpeg';
+import ayushImg from '../assets/ayush.jpeg';
+import pavithranImg from '../assets/pavithran.jpeg';
+import slatemateLogo from '../assets/SlateMate-logo.png';
+import hyerpowerLogo from '../assets/hyerpower.svg';
+import niweLogo from '../assets/NIWE_Logo-low.png';
+import climbmonkeyLogo from '../assets/climbmonkey.avif';
 import './Experience.css';
+
+const clients = [
+    { name: 'National Institute of Wind Energy', logo: niweLogo, url: "https://niwe.res.in/" },
+    { name: 'HyER Power', logo: hyerpowerLogo, url: "https://www.hyerpower.nl/" },
+    { name: 'SlateMate', logo: slatemateLogo, url: "https://www.slatemate.in/" },
+    { name: 'ClimbMonkey', logo: climbmonkeyLogo, url: "https://climbmonkey.in/" },
+];
 
 const experiences = [
     {
@@ -24,7 +37,7 @@ const experiences = [
         ],
         recommendation: {
             text: "Sanjay joined us specifically to build out the load forecasting module, and he delivered a very clean, solid solution that integrated perfectly with our EMS. He’s sharp, easy to communicate with when issues pop up, and really makes an effort to grasp the bigger picture of the architecture. Great guy to work with.",
-            author: "Mats van der Gulik",
+            author: "Mats van der Gulik, Co-Founder",
             image: matsImg
         }
     },
@@ -38,14 +51,38 @@ const experiences = [
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
         ],
         desc: [
             "Directing Agentic AI R&D for real-time juvenile safety and automated content monitoring.",
             "Architecting Graph-RAG frameworks for high-fidelity content moderation and user well-being.",
             "Engineering scalable, intelligent safety guardrails to protect next-gen users in digital spaces."
-        ]
+        ],
+        recommendation: {
+            text: "Having him on board as one of our earliest team members was a blessing. Being an early-stage startup, we were building from a completely blank slate, and he stepped right up, putting in late nights and weekends far beyond what anyone asked of him. He has this incredible ability to take a rough idea and independently drive it all the way to a polished, fully functioning product. If you need someone who can truly build from 0 to 1, he's your guy.",
+            author: "Ayush, CEO & CTO",
+            image: ayushImg
+        }
+    },
+    {
+        role: "Software Engineer (Freelance)",
+        company: "ClimbMonkey",
+        duration: "NOV 2025 - PRESENT",
+        companyLogo: <Zap size={40} color="var(--bg-primary)" />,
+        companyLogoBg: "#ea580c",
+        techStack: [
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+        ],
+        desc: [
+            "Built an automated Kilter Board route generation system modeling hold grid coordinates, board angle adjustments, and graded difficulty parameters.",
+            "Architected scalable backend services for LED mapping, route validation, and real-time climb analytics.",
+            "Implemented constraint-based path validation to ensure ergonomic feasibility and accurate performance feedback."
+        ],
+        recommendation: {
+            text: "He came into this with zero background in indoor climbing systems and within weeks, he deeply researched the domain, and started developing the dynamic route generator we needed and even came up with domain specific solution to satify our business model. It's rare to see someone dive into the absolute deep end and learn so rapidly.",
+            author: "Pavithran, Founder",
+            image: pavithranImg
+        }
     },
     {
         role: "Machine Learning Researcher (Contract)",
@@ -66,7 +103,7 @@ const experiences = [
         ],
         recommendation: {
             text: "Sanjay was engaged for the development of an Annual Energy Predictor utilising wind farm datasets. He has successfully fulfilled all the project requirements assigned to him. His methodology is mathematically rigorous, and the final model achieved the stipulated accuracy benchmarks. He maintained proper communication during our weekly reviews and demonstrated a strong capacity for independent research work.",
-            author: "Dr. Boopathi K.",
+            author: "Dr. Boopathi K., Dept. Head",
             image: boopathiImg
         }
     }
@@ -118,22 +155,30 @@ const Experience = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            onViewportEnter={() => {
-                const scrollContainer = document.querySelector('.experience-cards-wrapper');
-                if (scrollContainer) {
-                    // Center the scroll symmetrically
-                    scrollContainer.scrollLeft = (scrollContainer.scrollWidth - scrollContainer.clientWidth) / 2;
-                }
-            }}
             className="experience-container"
         >
-            <h3 className="section-title heading-spaced">Experience</h3>
+            <div className="experience-header-area">
+                <h3 className="section-title heading-spaced">Solutions Delivered</h3>
+            </div>
 
             <div className="experience-cards-wrapper">
                 <div className="experience-cards-scroll">
                     {experiences.map((exp, idx) => (
                         <ExperienceCard key={idx} exp={exp} />
                     ))}
+                </div>
+            </div>
+
+            <div className="client-marquee-section" style={{ marginTop: '2rem' }}>
+                <p className="clients-subtitle">clients worked with</p>
+                <div className="client-marquee-container">
+                    <div className="client-marquee">
+                        {[...clients, ...clients, ...clients, ...clients].map((client, idx) => (
+                            <a key={idx} href={client.url} target="_blank" rel="noopener noreferrer" className="client-logo-wrapper">
+                                <img src={client.logo} alt={client.name} className="client-logo" />
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </motion.div>

@@ -6,6 +6,14 @@ import profileImg from '../assets/freelancing.jpg';
 import './Hero.css';
 
 const Hero = () => {
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="hero-container">
             {/* Background Animated Rings */}
@@ -26,9 +34,9 @@ const Hero = () => {
             </motion.div>
 
             <div className="hero-content">
-                <h2 className="hero-subtitle heading-spaced">Software Engineer</h2>
+                <h2 className="hero-subtitle heading-spaced"> Freelancer | Machine Learning Engineer</h2>
                 <h1 className="hero-title">
-                    <span className="hero-name">Sanjay K. Saravanan</span>
+                    <span className="hero-name">Sanjay K Saravanan</span>
                 </h1>
 
                 <div className="typewriter-container">
@@ -36,9 +44,9 @@ const Hero = () => {
                         <span>
                             <Typewriter
                                 words={[
-                                    'Machine Learning Engineer',
+                                    'Applied Machine Learning Engineer',
+                                    'AI Solutions Architect',
                                     'AI Researcher',
-                                    'Agentic Systems Builder',
                                     'Open Source Contributor'
                                 ]}
                                 loop={true}
@@ -54,10 +62,10 @@ const Hero = () => {
 
                 {/* Navigation Pills */}
                 <div className="nav-pills">
-                    <a href="#about" className="nav-pill">About</a>
-                    <a href="#experience" className="nav-pill">Experience</a>
-                    <a href="#skills" className="nav-pill">Skills</a>
-                    <a href="#projects" className="nav-pill">Projects</a>
+                    <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="nav-pill">About</a>
+                    <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="nav-pill">Clients</a>
+                    <a href="#services" onClick={(e) => handleScroll(e, 'services')} className="nav-pill">Services</a>
+                    <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="nav-pill">Showcase</a>
                 </div>
             </div>
         </div>

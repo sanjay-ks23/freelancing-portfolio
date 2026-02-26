@@ -17,7 +17,6 @@ const skills = [
     { name: "PostgreSQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
     { name: "MySQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
     { name: "AWS", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-    { name: "DuckDB", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/duckdb/duckdb-original.svg" },
     { name: "OpenCV", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opencv/opencv-original.svg" }
 ];
 
@@ -44,7 +43,7 @@ const Skills = () => {
             transition={{ duration: 1.5 }}
             className="skills-container"
         >
-            <h3 className="section-title heading-spaced">Skills</h3>
+            <h3 className="section-title heading-spaced">Services Offered</h3>
 
             <div className="skills-grid">
                 {skills.map((skill, idx) => (
