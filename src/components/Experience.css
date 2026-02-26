@@ -93,18 +93,6 @@
     opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-    .client-logo {
-        /* Invert first so white bg becomes black, then use screen to make black transparent! */
-        filter: invert(1) grayscale(100%);
-        mix-blend-mode: screen;
-        opacity: 0.8;
-    }
-
-    .client-logo:hover {
-        opacity: 1;
-    }
-}
 
 .experience-cards-wrapper {
     width: 100%;
@@ -202,13 +190,6 @@
     object-fit: contain;
 }
 
-@media (prefers-color-scheme: dark) {
-
-    .tech-icon[src*="amazonwebservices"],
-    .tech-icon[src*="github"] {
-        filter: invert(1);
-    }
-}
 
 .card-duration {
     color: var(--text-secondary);
