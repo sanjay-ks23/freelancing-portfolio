@@ -1,9 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Home } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [status, setStatus] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('Sending...');
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/sanjaysaravanan2317@gmail.com", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject || "New Contact Form Submission",
+                    message: formData.message,
+                    _captcha: "false" // Disable CAPTCHA for cleaner UX if preferred
+                })
+            });
+
+            if (response.ok) {
+                setStatus('Sent Successfully!');
+                // Clear the form to allow a clean slate
+                setFormData({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+                // Reset status text after 3 seconds
+                setTimeout(() => setStatus(''), 3000);
+            } else {
+                setStatus('Failed to send. Please try again.');
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('Error occurred. Please try again.');
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -35,14 +87,46 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <form className="contact-form">
+                <form className="contact-form" onSubmit={handleSubmit}>
                     <div className="form-row">
-                        <input type="text" placeholder="Name" className="form-input" />
-                        <input type="email" placeholder="Email" className="form-input" />
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            className="form-input"
+                            required
+                            value={formData.name}
+                            onChange={handleChange}
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            className="form-input"
+                            required
+                            value={formData.email}
+                            onChange={handleChange}
+                        />
                     </div>
-                    <input type="text" placeholder="Subject" className="form-input" />
-                    <textarea placeholder="Message" className="form-textarea"></textarea>
-                    <button type="button" className="submit-btn">Submit</button>
+                    <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject (Optional)"
+                        className="form-input"
+                        value={formData.subject}
+                        onChange={handleChange}
+                    />
+                    <textarea
+                        name="message"
+                        placeholder="Message"
+                        className="form-textarea"
+                        required
+                        value={formData.message}
+                        onChange={handleChange}
+                    ></textarea>
+                    <button type="submit" className="submit-btn" disabled={status === 'Sending...'}>
+                        {status || "Connect"}
+                    </button>
                 </form>
 
             </div>
