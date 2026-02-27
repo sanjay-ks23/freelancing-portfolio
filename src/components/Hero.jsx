@@ -44,9 +44,10 @@ const Hero = () => {
                         <span>
                             <Typewriter
                                 words={[
-                                    'Applied Machine Learning Engineer',
+                                    'Machine Learning Engineer',
                                     'Software Engineer',
                                     'Front End Developer',
+                                    'AI Engineer',
                                     'Data Scientist'
                                 ]}
                                 loop={true}

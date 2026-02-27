@@ -16,44 +16,26 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        setStatus('Sending...');
 
-        try {
-            const response = await fetch("https://formsubmit.co/ajax/sanjaysaravanan2317@gmail.com", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json"
-                },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    subject: formData.subject || "New Contact Form Submission",
-                    message: formData.message,
-                    _captcha: "false" // Disable CAPTCHA for cleaner UX if preferred
-                })
-            });
+        // Define destination email and construct URL parts
+        const toEmail = "sanjaysaravanan2317@gmail.com";
+        const subjectLine = encodeURIComponent(formData.subject || `New enquiry from ${formData.name}`);
+        const bodyText = encodeURIComponent(
+            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
 
-            if (response.ok) {
-                setStatus('Sent Successfully!');
-                // Clear the form to allow a clean slate
-                setFormData({
-                    name: '',
-                    email: '',
-                    subject: '',
-                    message: ''
-                });
-                // Reset status text after 3 seconds
-                setTimeout(() => setStatus(''), 3000);
-            } else {
-                setStatus('Failed to send. Please try again.');
-            }
-        } catch (error) {
-            console.error(error);
-            setStatus('Error occurred. Please try again.');
-        }
+        // Directly open user's default email client
+        window.location.href = `mailto:${toEmail}?subject=${subjectLine}&body=${bodyText}`;
+
+        // Clear the form to allow a clean slate
+        setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        });
     };
 
     return (
