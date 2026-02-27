@@ -35,19 +35,29 @@ const services = [
     }
 ];
 
-const ServiceColumn = ({ service }) => {
+const ServiceCard = ({ service }) => {
     return (
-        <article className="service-column">
-            <h4 className="service-title">{service.title}</h4>
+        <article className="service-grid-card">
+            <div className="card-top">
+                <div className="title-group">
+                    <h4 className="service-main-title">
+                        {service.title}
+                    </h4>
+                </div>
+            </div>
+
             <div className="service-divider"></div>
-            <ul className="service-list">
-                {service.offerings.map((item, idx) => (
-                    <li key={idx}>
-                        <span className="bullet-point">•</span>
-                        <span className="bullet-text">{item}</span>
-                    </li>
-                ))}
-            </ul>
+
+            <div className="card-body">
+                <ul className="service-list">
+                    {service.offerings.map((item, idx) => (
+                        <li key={idx}>
+                            <span className="bullet-point">·</span>
+                            <span className="bullet-text">{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </article>
     );
 };
@@ -61,12 +71,12 @@ const Services = () => {
             className="services-container"
         >
             <div className="services-header-area">
-                <h3 className="section-title heading-spaced">My Expertise</h3>
+                <h3 className="section-title heading-spaced">EXPERTISE</h3>
             </div>
 
             <div className="services-grid-wrapper">
                 {services.map((srv, idx) => (
-                    <ServiceColumn key={idx} service={srv} />
+                    <ServiceCard key={idx} service={srv} />
                 ))}
             </div>
         </motion.div>

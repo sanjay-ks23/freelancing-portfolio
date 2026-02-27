@@ -9,19 +9,19 @@ import './Projects.css';
 const projects = [
     {
         title: "Agentic Conversational Support System",
-        desc: "Architected a hybrid AI engine using graph databases to boost reasoning accuracy by 40%. Engineered a real-time pipeline with caching and safety guardrails to ensure reliable, hallucination-free responses.",
-        link: "https://github.com/sanjay-ks23/Agentic-Conversational-Support-System",
+        desc: "Designed a hybrid reasoning architecture combining graph databases and LLM pipelines to improve contextual accuracy by 40 percent. Implemented real time inference optimization and response validation guardrails to ensure reliability and safety.",
+        link: "https://github.com/sanjay-ks23/GraphRAG-Psychotherapist-Agent",
         image: chatbotImg
     },
     {
-        title: "Real Time Social Media Data Pipeline",
-        desc: "Developed a high-speed data extraction pipeline achieving lightning-fast query times for real-time analytics. Automated large-scale data collection from complex websites using advanced browser orchestration.",
-        link: "https://github.com/sanjay-ks23/Real-time-Social-Media-Data-Pipeline",
+        title: "Social Media Data Pipeline",
+        desc: "Engineered a scalable ETL system for real time analytics, optimizing distributed data extraction and orchestration workflows to achieve low latency query performance across large scale datasets.",
+        link: "https://github.com/sanjay-ks23/Social-Media-ETL-Pipeline",
         image: etlImg
     },
     {
         title: "Real Time Motion Segmentation System",
-        desc: "Designed an efficient background subtraction algorithm optimized to run in real-time on small, resource-constrained devices. Proposed a complete optimization approach covering background modeling and autonomous updating.",
+        desc: "Implemented an optimized background modeling and motion isolation framework designed for low resource edge devices, enabling real time performance under constrained compute environments.",
         link: "https://github.com/sanjay-ks23/Background-Subtraction-for-Moving-Object-detection",
         image: bgSubImg
     },

@@ -64,7 +64,7 @@ const Hero = () => {
                 <div className="nav-pills">
                     <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="nav-pill">About</a>
                     <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="nav-pill">Clients</a>
-                    <a href="#services" onClick={(e) => handleScroll(e, 'services')} className="nav-pill">Services</a>
+                    <a href="#services" onClick={(e) => handleScroll(e, 'services')} className="nav-pill">Expertise</a>
                     <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="nav-pill">Works</a>
                 </div>
             </div>
