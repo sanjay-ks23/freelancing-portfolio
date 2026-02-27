@@ -65,8 +65,11 @@ const Contact = () => {
         >
             <div className="contact-content">
                 <h4 className="contact-heading">
-                    I have got just what you need. <span className="underline-accent">Lets talk.</span>
+                    Let's build something <span className="underline-blue">extraordinary.</span>
                 </h4>
+                <p className="contact-subtext">
+                    Whether you need complex AI infrastructure or a sleek web platform, I'm ready to bring your vision to life. Let's discuss your next big project.
+                </p>
 
                 <h3 className="section-title-inline heading-spaced">Contact</h3>
 

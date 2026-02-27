@@ -1,72 +1,51 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './Services.css';
 
 const services = [
     {
-        title: "AI System Development",
+        title: "Production Machine Learning Systems",
         offerings: [
-            "Custom Model Design",
-            "System Architecture",
-            "Model Evaluation",
-            "Deployment Strategy"
+            "End-to-end ML pipelines",
+            "Forecasting & anomaly detection",
+            "Computer vision systems",
+            "Model serving & scalable APIs",
+            "Monitoring & reliability"
         ]
     },
     {
-        title: "Forecasting & Predictive Analytics",
+        title: "AI Automation & LLM Systems",
         offerings: [
-            "Time-Series Modeling",
-            "Multi-Site Generalization",
-            "Performance Benchmarking",
-            "Forecast Reliability"
+            "Retrieval-Augmented Generation",
+            "Custom AI assistants & workflow automation",
+            "LLM fine-tuning & parameter optimization",
+            "Multi-agent orchestration frameworks",
+            "Secure backend integration"
         ]
     },
     {
-        title: "LLM & Intelligent Applications",
+        title: "Frontend Development & Deployment",
         offerings: [
-            "Retrieval-Augmented Systems",
-            "Context Management",
-            "Guardrails & Validation",
-            "Workflow Automation"
-        ]
-    },
-    {
-        title: "Computer Vision Systems",
-        offerings: [
-            "Real-Time Video Processing",
-            "Object Tracking",
-            "Motion Detection",
-            "Vision-Based Analytics"
-        ]
-    },
-    {
-        title: "ML Infrastructure & Deployment",
-        offerings: [
-            "API Development",
-            "Containerization",
-            "Cloud Deployment",
-            "Monitoring & Scaling"
-        ]
-    },
-    {
-        title: "Technical Web Deployment",
-        offerings: [
-            "Custom Portfolio Sites",
-            "Responsive Interfaces",
-            "Domain Setup",
-            "Hosting & Optimization"
+            "Responsive UI development",
+            "API integration & state management",
+            "Cloud deployment",
+            "Dockerized application deployment",
+            "Domain configuration & secure hosting"
         ]
     }
 ];
 
-const ServiceCard = ({ service }) => {
+const ServiceColumn = ({ service }) => {
     return (
-        <article className="service-card">
+        <article className="service-column">
             <h4 className="service-title">{service.title}</h4>
             <div className="service-divider"></div>
             <ul className="service-list">
                 {service.offerings.map((item, idx) => (
-                    <li key={idx}>{item}</li>
+                    <li key={idx}>
+                        <span className="bullet-point">•</span>
+                        <span className="bullet-text">{item}</span>
+                    </li>
                 ))}
             </ul>
         </article>
@@ -81,14 +60,14 @@ const Services = () => {
             transition={{ duration: 1.5 }}
             className="services-container"
         >
-            <h3 className="section-title heading-spaced">Services Offered</h3>
+            <div className="services-header-area">
+                <h3 className="section-title heading-spaced">My Expertise</h3>
+            </div>
 
-            <div className="services-cards-wrapper">
-                <div className="services-cards-scroll">
-                    {services.map((srv, idx) => (
-                        <ServiceCard key={idx} service={srv} />
-                    ))}
-                </div>
+            <div className="services-grid-wrapper">
+                {services.map((srv, idx) => (
+                    <ServiceColumn key={idx} service={srv} />
+                ))}
             </div>
         </motion.div>
     );

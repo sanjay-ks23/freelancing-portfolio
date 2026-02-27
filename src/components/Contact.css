@@ -24,11 +24,21 @@
     margin-bottom: 0.5rem;
 }
 
-.underline-accent {
+.underline-blue {
     text-decoration: underline;
-    text-decoration-color: var(--accent-color);
+    text-decoration-color: #3b82f6;
+    /* A sharp, professional blue */
     text-underline-offset: 8px;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 4px;
+}
+
+.contact-subtext {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    opacity: 0.85;
 }
 
 .section-title-inline {
@@ -121,14 +131,23 @@
 
 @media (max-width: 768px) {
     .contact-heading {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .contact-item {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-info {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .form-row {
         flex-direction: column;
+    }
+
+    .contact-content {
+        gap: 1rem;
     }
 }

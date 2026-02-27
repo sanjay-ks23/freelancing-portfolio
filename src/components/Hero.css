@@ -151,8 +151,16 @@
         font-size: 1.1rem;
     }
 
+    .nav-pills {
+        gap: 0.5rem;
+    }
+
     .nav-pill {
-        padding: 0.4rem 1rem;
-        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.7rem;
+    }
+
+    .hero-rings {
+        display: none;
     }
 }

@@ -28,7 +28,8 @@ const experiences = [
         techStack: [
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
-            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg",
+            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
         ],
         desc: [
             "Designing state-of-the-art load forecasting models used within the Energy Management System (EMS).",

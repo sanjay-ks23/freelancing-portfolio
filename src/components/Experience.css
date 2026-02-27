@@ -98,27 +98,30 @@
     margin-top: 10rem;
     display: flex;
     overflow-x: auto;
-    padding: 0 2rem 2rem;
+    padding: 2rem 2rem 4rem;
     scroll-snap-type: x mandatory;
 }
 
 .experience-cards-wrapper::-webkit-scrollbar {
-    height: 24px;
+    height: 5px;
 }
 
 .experience-cards-wrapper::-webkit-scrollbar-track {
-    background: rgba(102, 178, 162, 0.1);
-    border: 9px solid transparent;
-    background-clip: padding-box;
-    border-radius: 12px;
-    margin: 0 4rem;
+    background: rgba(102, 178, 162, 0.05);
+    border-radius: 10px;
+    margin: 0 20vw;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 .experience-cards-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(102, 178, 162, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.experience-cards-wrapper::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
-    border: 9px solid transparent;
-    background-clip: padding-box;
-    border-radius: 12px;
 }
 
 .experience-cards-scroll {
@@ -277,37 +280,55 @@
 @media (max-width: 768px) {
     .experience-card {
         width: 85vw;
-        max-width: 350px;
+        max-width: 100%;
         padding: 1.5rem;
+        height: auto;
     }
 
     .experience-cards-wrapper {
-        padding: 0 1rem 1rem;
-        margin-top: 2rem;
+        padding: 2rem 1rem 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .experience-cards-wrapper::-webkit-scrollbar-track {
+        margin: 0 10vw;
     }
 
     .experience-cards-scroll {
         padding-left: 0;
         padding-right: 0;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .card-role {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 
     .client-logo-wrapper {
-        padding: 0 2rem;
+        padding: 0 1.5rem;
     }
 
     .client-logo {
-        height: 50px;
-        max-width: 180px;
+        height: 40px;
+        max-width: 140px;
     }
 
     .experience-header-area {
         position: static;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         margin-top: 2rem;
+    }
+
+    .card-desc li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .recommendation-text {
+        font-size: 0.85rem;
+    }
+
+    .card-duration {
+        margin-bottom: 1rem;
     }
 }

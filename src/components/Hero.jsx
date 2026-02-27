@@ -34,7 +34,7 @@ const Hero = () => {
             </motion.div>
 
             <div className="hero-content">
-                <h2 className="hero-subtitle heading-spaced"> Freelancer | Machine Learning Engineer</h2>
+                <h2 className="hero-subtitle heading-spaced"> </h2>
                 <h1 className="hero-title">
                     <span className="hero-name">Sanjay K Saravanan</span>
                 </h1>
@@ -45,9 +45,9 @@ const Hero = () => {
                             <Typewriter
                                 words={[
                                     'Applied Machine Learning Engineer',
-                                    'AI Solutions Architect',
-                                    'AI Researcher',
-                                    'Open Source Contributor'
+                                    'Software Engineer',
+                                    'Front End Developer',
+                                    'Data Scientist'
                                 ]}
                                 loop={true}
                                 cursor
@@ -65,7 +65,7 @@ const Hero = () => {
                     <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="nav-pill">About</a>
                     <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="nav-pill">Clients</a>
                     <a href="#services" onClick={(e) => handleScroll(e, 'services')} className="nav-pill">Services</a>
-                    <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="nav-pill">Showcase</a>
+                    <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="nav-pill">Works</a>
                 </div>
             </div>
         </div>

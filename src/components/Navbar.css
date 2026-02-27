@@ -1,5 +1,5 @@
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -50,4 +50,10 @@
 
 .contact-link:hover {
     color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
 }
