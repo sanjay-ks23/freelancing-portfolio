@@ -67,7 +67,7 @@ const Projects = () => {
             className="projects-container"
         >
             <div className="projects-header-area">
-                <h3 className="section-title heading-spaced">MY WORKS</h3>
+                <h3 className="section-title heading-spaced">PORTFOLIO</h3>
             </div>
 
             <div className="projects-cards-wrapper">

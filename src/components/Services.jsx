@@ -10,16 +10,16 @@ const services = [
             "Forecasting & anomaly detection",
             "Computer vision systems",
             "Model serving & scalable APIs",
-            "Monitoring & reliability"
+            "Monitoring & reliability tracking"
         ]
     },
     {
         title: "AI Automation & LLM Systems",
         offerings: [
             "Retrieval-Augmented Generation",
-            "Custom AI assistants & workflow automation",
-            "LLM fine-tuning & parameter optimization",
-            "Multi-agent orchestration frameworks",
+            "Custom AI assistants & workflow",
+            "LLM fine-tuning & optimization",
+            "Multi-agent orchestration",
             "Secure backend integration"
         ]
     },
@@ -28,9 +28,9 @@ const services = [
         offerings: [
             "Responsive UI development",
             "API integration & state management",
-            "Cloud deployment",
+            "Scalable cloud deployment",
             "Dockerized application deployment",
-            "Domain configuration & secure hosting"
+            "Domain configuration & hosting"
         ]
     }
 ];
