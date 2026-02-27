@@ -87,3 +87,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 768px) {
+  .section-container {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 4rem;
+    justify-content: flex-start;
+    scroll-snap-align: start;
+  }
+}

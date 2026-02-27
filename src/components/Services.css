@@ -93,12 +93,23 @@
 
 @media (max-width: 768px) {
     .service-card {
-        width: 320px;
+        width: 85vw;
+        max-width: 350px;
         padding: 1.5rem;
     }
 
+    .services-cards-wrapper {
+        padding: 0 1rem 1rem;
+        margin-top: 3rem;
+    }
+
     .services-cards-scroll {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
     }
 }

@@ -129,12 +129,32 @@
 
 @media (max-width: 768px) {
     .project-card {
-        width: 320px;
-        padding: 1.5rem;
+        width: 100%;
+        max-width: 350px;
+        min-height: auto;
+        padding: 0;
+    }
+
+    .project-image-container {
+        height: 250px;
+    }
+
+    .projects-cards-wrapper {
+        padding: 0 1rem 1rem;
+        margin-top: 3rem;
     }
 
     .projects-cards-scroll {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1.5rem;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .project-title {
+        font-size: 1.15rem;
     }
 }

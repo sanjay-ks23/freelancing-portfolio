@@ -132,3 +132,27 @@
         opacity: 0.2;
     }
 }
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-profile-img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .typewriter-text {
+        font-size: 1.1rem;
+    }
+
+    .nav-pill {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+    }
+}
