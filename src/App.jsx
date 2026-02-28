@@ -3,7 +3,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
+import MobileExperience from './components/MobileExperience';
 import Services from './components/Services';
+import MobileServices from './components/MobileServices';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import './App.css';
@@ -31,11 +33,21 @@ function App() {
       </section>
 
       <section id="experience" className="snap-section">
-        <Experience />
+        <div className="desktop-only">
+          <Experience />
+        </div>
+        <div className="mobile-only">
+          <MobileExperience />
+        </div>
       </section>
 
       <section id="services" className="snap-section bg-secondary">
-        <Services />
+        <div className="desktop-only">
+          <Services />
+        </div>
+        <div className="mobile-only">
+          <MobileServices />
+        </div>
       </section>
 
       <section id="projects" className="snap-section">

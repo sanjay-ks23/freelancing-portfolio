@@ -1,0 +1,362 @@
+.experience-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-header-area {
+    position: absolute;
+    top: 6%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience-header-area .section-title {
+    position: relative;
+    top: 0;
+    margin: 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.clients-subtitle {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.client-marquee-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client-marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    display: flex;
+    align-items: center;
+}
+
+.client-marquee {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-marquee 40s linear infinite;
+}
+
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 4));
+        /* Divided by 4 since we multiplied the array by 4 */
+    }
+}
+
+.client-logo-wrapper {
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-logo {
+    height: 70px;
+    max-width: 250px;
+    object-fit: contain;
+    /* Invert for dark theme, then use screen to make black transparent */
+    filter: invert(1) grayscale(100%);
+    mix-blend-mode: screen;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+
+.experience-cards-wrapper {
+    width: 100%;
+    margin-top: 10rem;
+    display: flex;
+    overflow-x: auto;
+    padding: 2rem 2rem 4rem;
+    scroll-snap-type: x mandatory;
+}
+
+.experience-cards-wrapper::-webkit-scrollbar {
+    height: 5px;
+}
+
+.experience-cards-wrapper::-webkit-scrollbar-track {
+    background: rgba(102, 178, 162, 0.05);
+    border-radius: 10px;
+    margin: 0 20vw;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.experience-cards-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(102, 178, 162, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.experience-cards-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+.experience-cards-scroll {
+    display: flex;
+    gap: 3rem;
+}
+
+.experience-card {
+    scroll-snap-align: center;
+    background-color: var(--bg-secondary);
+    padding: 2.5rem;
+    border-radius: 2rem;
+    width: 650px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    opacity: 0.7;
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.experience-card:hover {
+    opacity: 1;
+    transform: translateY(-8px);
+}
+
+.card-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.card-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.card-role {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.card-company {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-tech-stack {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.tech-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.tech-icon[src*="amazonwebservices"],
+.tech-icon[src*="github"] {
+    filter: invert(1);
+}
+
+
+.card-duration {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.card-desc {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    color: var(--text-secondary);
+    flex-grow: 1;
+}
+
+.card-desc li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.recommendation-box {
+    background-color: rgba(102, 178, 162, 0.1);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    position: relative;
+    margin-top: auto;
+}
+
+.quote-icon {
+    color: var(--accent-color);
+    opacity: 0.3;
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-text {
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+.recommendation-author-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.recommendation-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.recommendation-image:hover {
+    filter: grayscale(0%);
+}
+
+.recommendation-author {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .experience-card {
+        width: 85vw;
+        max-width: 100%;
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        height: auto !important;
+        /* Force auto height to prevent content overflow */
+        min-height: fit-content;
+        box-sizing: border-box;
+    }
+
+    .experience-cards-wrapper {
+        padding: 2rem 1rem 2rem;
+        margin-top: 1.5rem;
+    }
+
+    .experience-cards-wrapper::-webkit-scrollbar-track {
+        margin: 0 10vw;
+    }
+
+    .experience-cards-scroll {
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1.5rem;
+        /* Increase gap slightly for distinct scrolling */
+    }
+
+    .card-role {
+        font-size: 1.15rem;
+    }
+
+    .client-logo-wrapper {
+        padding: 0 1.5rem;
+    }
+
+    .client-logo {
+        height: 40px;
+        max-width: 140px;
+    }
+
+    .experience-header-area {
+        position: static;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .card-desc li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .recommendation-text {
+        font-size: 0.85rem;
+    }
+
+    .card-duration {
+        margin-bottom: 0.5rem;
+    }
+
+    .card-content {
+        height: auto !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.75rem;
+    }
+
+    .recommendation-box {
+        height: auto !important;
+        margin-top: auto !important;
+        padding: 1rem 1rem 1.25rem 1rem;
+        box-sizing: border-box;
+    }
+
+    .clients-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}

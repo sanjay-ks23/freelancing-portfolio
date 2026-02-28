@@ -77,8 +77,14 @@
         font-size: 1.25rem;
     }
 
+    .about-text {
+        padding: 0 1rem;
+    }
+
     .about-text p {
         font-size: 0.95rem;
+        text-align: justify;
+        line-height: 1.6;
     }
 
     .section-title {

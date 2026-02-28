@@ -63,8 +63,31 @@
   }
 }
 
+.desktop-only {
+  display: block;
+  width: 100%;
+}
+
+.mobile-only {
+  display: none;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .global-home-btn {
     display: none;
+  }
+
+  .snap-section {
+    height: auto !important;
+    min-height: 100vh;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
   }
 }

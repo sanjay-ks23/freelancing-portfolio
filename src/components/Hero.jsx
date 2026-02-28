@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Linkedin, Twitter, Github, Mail } from 'lucide-react';
 import profileImg from '../assets/freelancing.jpg';
 import './Hero.css';
 
@@ -67,6 +67,19 @@ const Hero = () => {
                     <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="nav-pill">Clients</a>
                     <a href="#services" onClick={(e) => handleScroll(e, 'services')} className="nav-pill">Expertise</a>
                     <a href="#projects" onClick={(e) => handleScroll(e, 'projects')} className="nav-pill">Works</a>
+                </div>
+
+                {/* Social & Contact */}
+                <div className="hero-socials">
+                    <div className="social-icons-hero">
+                        <a href="https://www.linkedin.com/in/sanjayks2317/" target="_blank" rel="noreferrer" className="social-icon"><Linkedin size={22} /></a>
+                        <a href="https://x.com/Sanj_AI_space" target="_blank" rel="noreferrer" className="social-icon"><Twitter size={22} /></a>
+                        <a href="https://github.com/sanjay-ks23" target="_blank" rel="noreferrer" className="social-icon"><Github size={22} /></a>
+                    </div>
+                    <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="hero-get-in-touch text-accent">
+                        <Mail size={20} className="mail-icon" />
+                        <span>GET IN TOUCH</span>
+                    </a>
                 </div>
             </div>
         </div>

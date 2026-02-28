@@ -93,8 +93,8 @@ body {
     height: auto;
     min-height: 100vh;
     padding: 6rem 2rem 4rem;
-    /* Increased side padding from 1.5rem to 2rem */
-    justify-content: flex-start;
+    justify-content: center;
+    /* keep it centered! */
     scroll-snap-align: start;
   }
 }
